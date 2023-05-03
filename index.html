@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebStudio</title>
@@ -30,6 +31,15 @@
           <a class="logo link" href="./index.html"
             >Web<span class="logo-studio">Studio</span>
           </a>
+          <button
+            class="menu-toggle js-open-menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <svg class="icon-menu" width="32" height="32">
+              <use href="./images/icon.svg#icon-menu"></use>
+            </svg>
+          </button>
           <ul class="navigation list">
             <li class="item">
               <a class="link current" href="./index.html">Studio</a>
@@ -139,7 +149,7 @@
         </div>
       </section>
       <!-- Section 2 -->
-      <section class="our-works">
+      <!-- <section class="our-works">
         <div class="container">
           <h2 class="title-two">What are we doing</h2>
           <ul class="list">
@@ -169,9 +179,9 @@
             </li>
           </ul>
         </div>
-      </section>
+      </section> -->
       <!-- Section 3-->
-      <section class="team">
+      <!-- <section class="team">
         <div class="container">
           <h2 class="title-two">Our Team</h2>
           <ul class="list">
@@ -426,9 +436,9 @@
             </li>
           </ul>
         </div>
-      </section>
+      </section> -->
       <!-- Section 4 -->
-      <section class="customers">
+      <!-- <section class="customers">
         <div class="container">
           <h2 class="title-two">Customers</h2>
           <ul class="list-customers list">
@@ -476,10 +486,10 @@
             </li>
           </ul>
         </div>
-      </section>
+      </section> -->
     </main>
     <!-- Footer -->
-    <footer class="footer">
+    <!-- <footer class="footer">
       <div class="footer-container container">
         <div class="second-footer-container">
           <a class="logo link" href="./index.html"
@@ -564,11 +574,11 @@
           </form>
         </div>
       </div>
-    </footer>
+    </footer> -->
     <!-- Modal -->
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
-        <button class="modal-btn" data-modal-close>
+        <button class="close-btn" data-modal-close>
           <svg width="8" height="8">
             <use href="./images/icon.svg#icon-close"></use>
           </svg>
@@ -642,7 +652,94 @@
         </form>
       </div>
     </div>
+    <!-- Mobile menu -->
+    <div class="menu-container js-menu-container" id="mobile-menu">
+      <button class="close-btn menu-toggle js-close-menu">
+        <svg class="menu-close-icon" width="8" height="8">
+          <use href="./images/icon.svg#icon-close"></use>
+        </svg>
+      </button>
+      <ul class="mobile-menu">
+        <li>
+          <a class="link" href="./index.html">Studio</a>
+        </li>
+        <li>
+          <a class="link" href="./portfolio.html">Portfolio</a>
+        </li>
+        <li><a class="link" href="">Contacts</a></li>
+      </ul>
+      <address>
+        <ul class="menu-address list">
+          <li class="menu-tel">
+            <a class="link" href="tel:+110001111111">+11 (000) 111-11-11</a>
+          </li>
+          <li>
+            <a class="link" href="mailto:info@devstudio.com"
+              >info@devstudio.com</a
+            >
+          </li>
+        </ul>
+      </address>
+      <ul class="social-media list">
+        <li class="social-list">
+          <a
+            class="networks-link footer-link"
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="24" height="24" class="link-icon">
+              <use href="./images/icon.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-list">
+          <a
+            class="networks-link footer-link"
+            href="https://twitter.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="24" height="24" class="link-icon">
+              <use href="./images/icon.svg#icon-twitter"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-list">
+          <a
+            class="networks-link footer-link"
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="24" height="24" class="link-icon">
+              <use href="./images/icon.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-list">
+          <a
+            class="networks-link footer-link"
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="24" height="24" class="link-icon">
+              <use href="./images/icon.svg#icon-linkedin"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
     <!-- JS -->
     <script src="./js/modal.js"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="js/mobile-menu.js"></script>
   </body>
 </html>
