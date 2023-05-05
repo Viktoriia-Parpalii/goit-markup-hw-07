@@ -81,8 +81,6 @@ body {
   margin-right: auto;
   padding-left: 16px;
   padding-right: 16px;
-
-  outline: 2px solid purple;
 }
 @media only screen and (min-width: 768px) {
   .container {
@@ -112,6 +110,8 @@ body {
 }
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 h1,
 h2,
@@ -128,9 +128,7 @@ ul {
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
-.header .menu-toggle {
-  margin-left: auto;
-}
+
 .logo {
   display: flex;
   font-family: 'Raleway', sans-serif;
@@ -145,6 +143,7 @@ ul {
   color: var(--navy-blue);
 }
 .nav-list .logo {
+  margin-right: auto;
   padding: 24px 0;
 }
 @media only screen and (min-width: 768px) {
@@ -222,7 +221,11 @@ ul {
   display: flex;
   align-items: center;
 }
-
+@media only screen and (max-width: 767px) {
+  .nav-list {
+    width: 100%;
+  }
+}
 @media only screen and (min-width: 768px) {
   .nav-list {
     margin-right: auto;
@@ -453,6 +456,11 @@ ul {
     padding: 120px 0;
   }
 }
+@media only screen and (min-width: 768px) and (max-width: 1157px) {
+  .team .container {
+    width: 584px;
+  }
+}
 .team .title-two {
   margin-bottom: 72px;
 }
@@ -466,7 +474,6 @@ ul {
   .main-team-list {
     row-gap: 64px;
     column-gap: 24px;
-    justify-content: center;
   }
 }
 @media only screen and (min-width: 1158px) {
@@ -475,7 +482,7 @@ ul {
   }
 }
 .team-icon {
-  max-width: 264px;
+  /* max-width: 264px; */
   background-color: var(--white);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -542,9 +549,10 @@ ul {
 .customers {
   padding: 96px 0;
 }
-@media only screen and (min-width: 768px) {
-  .customers {
-    padding: 96px 108px;
+
+@media only screen and (min-width: 768px) and (max-width: 1157px) {
+  .customers .container {
+    width: 584px;
   }
 }
 @media only screen and (min-width: 1158px) {
@@ -621,11 +629,12 @@ ul {
     padding: 100px 0;
   }
 }
-@media only screen and (min-width: 768px) {
-  .footer {
-    padding: 100px 108px;
+@media only screen and (min-width: 768px) and (max-width: 1157px) {
+  .footer .container {
+    width: 584px;
   }
 }
+
 .footer .logo {
   display: block;
   margin-bottom: 16px;
@@ -843,7 +852,17 @@ ul {
 */
 
 .portfolio {
-  padding: 96px 0 120px 0;
+  padding: 48px 0;
+}
+@media only screen and (min-width: 768px) {
+  .portfolio {
+    padding: 64px 0 96px 0;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .portfolio {
+    padding: 96px 0 120px 0;
+  }
 }
 /* Filter */
 .filter-btn {
@@ -876,20 +895,44 @@ ul {
 
 .portfolio-filter {
   display: flex;
-  justify-content: center;
-  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: start;
+  row-gap: 24px;
+  column-gap: 40px;
   margin-bottom: 72px;
+}
+@media only screen and (min-width: 768px) {
+  .portfolio-filter {
+    justify-content: center;
+  }
 }
 /* Portfolio list */
 .portfolio-list {
   display: flex;
   flex-wrap: wrap;
-
+  justify-content: center;
   column-gap: 24px;
   row-gap: 48px;
 }
+@media only screen and (min-width: 768px) and (max-width: 1158px) {
+  .portfolio-list {
+    justify-content: start;
+    row-gap: 72px;
+  }
+}
 .portfolio-icon {
-  width: calc((100% - 48px) / 3);
+  width: calc((100% - 0) / 1);
+}
+
+@media only screen and (min-width: 768px) {
+  .portfolio-icon {
+    width: calc((100% - 24px) / 2);
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .portfolio-icon {
+    width: calc((100% - 48px) / 3);
+  }
 }
 .portfolio-title {
   margin-bottom: 8px;
@@ -960,7 +1003,7 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-
+  overflow: scroll;
   opacity: 1;
   visibility: visible;
   pointer-events: initial;
@@ -970,6 +1013,7 @@ ul {
   transition: opacity var(--animation), visibility var(--animation),
     pointer-events var(--animation);
 }
+
 .backdrop.is-hidden {
   opacity: 0;
   visibility: hidden;
@@ -980,6 +1024,7 @@ ul {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 392px;
   min-height: 576px;
   padding: 72px 24px 24px 24px;
   background-color: var(--dairy);
@@ -990,14 +1035,20 @@ ul {
   transform: scale(1) translate(-50%, -50%);
   transition: transform var(--animation);
 }
-@media only screen and (max-width: 427px) {
+@media screen and (max-width: 392px) {
   .modal {
-    max-width: 392px;
+    width: 100%;
   }
 }
-@media only screen and (min-width: 428px) {
-   {
+@media only screen and (min-width: 768px) {
+  .modal {
     width: 408px;
+  }
+}
+@media only screen and (max-width: 1158px) {
+  .modal {
+    top: 10%;
+    transform: translateX(-50%);
   }
 }
 .close-btn {
@@ -1088,7 +1139,7 @@ ul {
   fill: var(--iris);
 }
 .form-comment {
-  width: 360px;
+  width: 100%;
   min-height: 120px;
   padding: 8px 16px;
   margin-bottom: 16px;
