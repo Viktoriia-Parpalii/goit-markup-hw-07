@@ -238,16 +238,71 @@ ul {
   margin-right: auto;
   text-align: center;
   background-color: var(--navy-blue);
-  background-image: linear-gradient(
-      rgba(46, 47, 66, 0.7),
-      rgba(46, 47, 66, 0.7)
-    ),
-    url(../images/hero/hero-bg.jpg);
+
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-
+@media only screen and (max-width: 427px) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero/hero-bg_mob@1x.jpg);
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/hero/hero-bg_mob@2x.jpg);
+    }
+  }
+}
+@media only screen and (min-width: 428px) and (max-width: 767px) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero/hero-bg_tab@1x.jpg);
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/hero/hero-bg_tab@2x.jpg);
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero/hero-bg_desk@1x.jpg);
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/hero/hero-bg_desk@2x.jpg);
+    }
+  }
+}
 @media only screen and (min-width: 1158px) {
   .hero {
     padding: 188px 0;
@@ -329,15 +384,13 @@ ul {
   padding-left: 0;
   margin-bottom: 8px;
 }
-
-@media only screen and (min-width: 768px) {
-  .advantages ul {
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 72px;
-    column-gap: 24px;
-  }
+.advantages ul {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 72px;
+  column-gap: 24px;
 }
+
 .advantages-wrapper {
   display: none;
   margin-bottom: 8px;
@@ -354,9 +407,6 @@ ul {
   }
 }
 
-.advantages-item:not(:last-child) {
-  margin-bottom: 72px;
-}
 @media only screen and (min-width: 768px) {
   .advantages-item {
     width: calc((100% - 1 * 24px) / 2);
@@ -408,14 +458,12 @@ ul {
 }
 .main-team-list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 72px;
+  flex-wrap: wrap;
+  row-gap: 72px;
+  justify-content: center;
 }
 @media only screen and (min-width: 768px) {
   .main-team-list {
-    flex-direction: row;
-    flex-wrap: wrap;
     row-gap: 64px;
     column-gap: 24px;
     justify-content: center;
@@ -780,11 +828,7 @@ ul {
 
   transition: box-shadow var(--animation);
 }
-@media only screen and (min-width: minwidthpx) {
-  .footer-btn {
-    margin: 0;
-  }
-}
+
 .footer-btn:focus,
 .footer-btn:hover {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -936,7 +980,6 @@ ul {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 408px;
   min-height: 576px;
   padding: 72px 24px 24px 24px;
   background-color: var(--dairy);
@@ -946,6 +989,16 @@ ul {
 
   transform: scale(1) translate(-50%, -50%);
   transition: transform var(--animation);
+}
+@media only screen and (max-width: 427px) {
+  .modal {
+    max-width: 392px;
+  }
+}
+@media only screen and (min-width: 428px) {
+   {
+    width: 408px;
+  }
 }
 .close-btn {
   position: absolute;
@@ -1158,8 +1211,8 @@ ul {
   left: 0;
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   padding: 24px 24px 40px 40px;
 
   background-color: var(--white);
@@ -1200,6 +1253,9 @@ ul {
   text-decoration: none;
 
   transition: color var(--animation);
+}
+.mobile-menu .menu-current-link {
+  color: var(--iris);
 }
 .mobile-menu .link:hover,
 .mobile-menu .link:focus {
