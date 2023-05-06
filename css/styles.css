@@ -600,7 +600,7 @@ ul {
   }
 }
 .customers-link {
-  padding: 16px 32px;
+  padding: 16px 6px;
   display: flex;
   height: 100%;
   width: 100%;
@@ -874,7 +874,7 @@ ul {
 }
 /* Filter */
 .filter-btn {
-  padding: 8px 16px;
+  padding: 12px 24px;
   min-width: 69px;
 
   font-family: 'Roboto', sans-serif;
@@ -892,11 +892,7 @@ ul {
   transition: background-color var(--animation), color var(--animation),
     border var(--animation), box-shadow var(--animation);
 }
-@media only screen and (min-width: 768px) {
-  .filter-btn {
-    padding: 12px 24px;
-  }
-}
+
 .filter-btn:hover,
 .filter-btn:focus {
   background-color: var(--ocean);
@@ -910,8 +906,8 @@ ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
-  row-gap: 24px;
-  column-gap: 40px;
+  gap: 24px;
+  row-gap: 16px;
   margin-bottom: 72px;
 }
 @media only screen and (min-width: 768px) {
@@ -1050,7 +1046,7 @@ ul {
 }
 @media screen and (max-width: 392px) {
   .modal {
-    width: 100%;
+    width: calc(100% - 30px);
   }
 }
 @media only screen and (min-width: 768px) {
@@ -1213,7 +1209,6 @@ ul {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
-  text-align: center;
   color: var(--light-slate);
 }
 .checkbox-link {
@@ -1277,7 +1272,7 @@ ul {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  padding: 24px 24px 40px 40px;
+  padding: 80px 24px 40px 40px;
 
   background-color: var(--white);
   z-index: 999;
@@ -1337,6 +1332,11 @@ ul {
   font-size: 36px;
   line-height: 1.11;
   letter-spacing: 0.02em;
+}
+@media only screen and (max-width: 427px) {
+  .menu-tel {
+    font-size: 26px;
+  }
 }
 .menu-address .link {
   color: var(--slate);
